@@ -1,0 +1,16 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid;
+  border-top: none;
+}
+
+.reportsListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

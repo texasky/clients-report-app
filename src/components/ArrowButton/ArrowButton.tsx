@@ -1,10 +1,17 @@
-import styles from './ArrowButton.module.scss';
-const ArrowButton = (props: any) => {
+import styles from "./ArrowButton.module.scss";
+import arrowButton from "../../assets/icons/arrow-icon.svg";
+import { ArrowButtonProps } from "../../types/types";
+const ArrowButton = (props: ArrowButtonProps) => {
     return (
-        <div className={props.isOpen ? styles.arrow : styles.arrowUp}>
-            <div className="arrow-top"></div>
-            <div className="arrow-bottom"></div>
-        </div>
+        <button
+            className={`${styles.arrowButton} ${props.isOpen && styles.arrowUp}`}
+            onClick={props.onClick}
+        >
+           <img
+               src={arrowButton}
+               alt="Expand"
+           />
+        </button>
     )
 }
 

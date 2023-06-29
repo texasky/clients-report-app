@@ -1,0 +1,66 @@
+{
+  "clients": [
+    { "id": 1, "name": "Alexander" },
+    { "id": 2, "name": "Daniil" },
+    { "id": 3, "name": "Adrian" }
+  ],
+  "reports": {
+    "userId1": [
+      {
+        "reportId": "1",
+        "data": [
+          {
+            "id": 1,
+            "src": "pic1"
+          },
+          {
+            "id": 2,
+            "src": "pic2"
+          },
+          {
+            "id": 3,
+            "src": "pic5"
+          }
+        ]
+      }
+    ],
+    "userId2": [
+      {
+        "reportId": "1",
+        "data": [
+          {
+            "id": 1,
+            "src": "pic2"
+          },
+          {
+            "id": 2,
+            "src": "pic4"
+          },
+          {
+            "id": 3,
+            "src": "pic3"
+          }
+        ]
+      }
+    ],
+    "userId3": [
+      {
+        "reportId": "1",
+        "data": [
+          {
+            "id": 1,
+            "src": "pic3"
+          },
+          {
+            "id": 2,
+            "src": "pic5"
+          },
+          {
+            "id": 3,
+            "src": "pic1"
+          }
+        ]
+      }
+    ]
+  }
+}

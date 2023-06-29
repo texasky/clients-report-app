@@ -1,17 +1,15 @@
-.arrow,
-.arrowUp {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-top: 2px solid #000;
-  border-right: 2px solid #000;
+.arrowButton {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+
+  img {
+    transform: rotate(90deg);
+  }
+
+  &.arrowUp img{
+    transform: rotate(-90deg);
+  }
 }
 
-.arrow {
-  transform: rotate(135deg);
-}
-
-.arrowUp {
-    transform: rotate(-45deg);
-}
 

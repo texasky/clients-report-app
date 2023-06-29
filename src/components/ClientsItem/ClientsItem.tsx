@@ -1,19 +1,32 @@
-import styles from './ClientsItem.module.scss';
-import {useState} from "react";
+import styles from "./ClientsItem.module.scss";
+import { useState } from "react";
+import { useAppDispatch } from "../../hooks";
+import { deleteClient } from "../../features/clients/clientsSlice";
+import { Client } from "../../types/types";
+import ReportsList from "../ReportsList/ReportsList";
 import ClientsHeader from "../ClientsHeader/ClientsHeader";
-import ClientsReports from "../ClientsReports/ClientsReports";
 
-const ClientsItem = (props: any) => {
+const ClientsItem = (props: Client) => {
+    const dispatch = useAppDispatch();
     const [openState, setOpenState] = useState(false);
 
-    const toggleOpenState = () => {
+    const toggleOpenState = ():void => {
         setOpenState(openState => !openState);
+    }
+
+    const onDeleteClient = ():void => {
+        dispatch({type: deleteClient, payload: props.id});
     }
 
     return (
         <div className={styles.clientItem}>
-            <ClientsHeader isOpen={openState} onClick={toggleOpenState} />
-            {openState && <ClientsReports />}
+            <ClientsHeader
+                isOpen={openState}
+                onOpenClick={toggleOpenState}
+                onDeleteClick={onDeleteClient}
+                text={props.name}
+            />
+            {openState && <ReportsList text={props.name} clientId={props.id} />}
         </div>
     )
 }

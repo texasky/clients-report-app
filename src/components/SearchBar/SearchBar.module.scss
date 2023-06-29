@@ -1,0 +1,17 @@
+.searchBar {
+  position: relative;
+}
+
+.searchInput {
+  height: 50px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  height: 30px;
+  opacity: 0.5;
+}

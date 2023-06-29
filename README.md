@@ -2,7 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Here is an instruction to run the project
+
+1) Run a terminal in project directory and install its dependencies with `npm install` command.
+2) In a terminal run database server with `json-server -p 3500 -w src/data/db.json`.
+3) When the database is turned on open another terminal and start a project with `npm start`.
+
+## All Available Scripts
 
 In the project directory, you can run:
 
