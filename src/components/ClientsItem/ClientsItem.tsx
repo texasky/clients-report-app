@@ -1,5 +1,5 @@
 import styles from "./ClientsItem.module.scss";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useAppDispatch } from "../../hooks";
 import { deleteClient } from "../../features/clients/clientsSlice";
 import { Client } from "../../types/types";
@@ -10,13 +10,12 @@ const ClientsItem = (props: Client) => {
     const dispatch = useAppDispatch();
     const [openState, setOpenState] = useState(false);
 
-    const toggleOpenState = ():void => {
+    const toggleOpenState = useCallback(() => {
         setOpenState(openState => !openState);
-    }
-
-    const onDeleteClient = ():void => {
+    }, [])
+    const onDeleteClient = useCallback(() => {
         dispatch({type: deleteClient, payload: props.id});
-    }
+    }, [dispatch, props.id])
 
     return (
         <div className={styles.clientItem}>

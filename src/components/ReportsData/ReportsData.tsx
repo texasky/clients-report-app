@@ -5,13 +5,14 @@ import { v4 as uuid } from "uuid";
 import { useAppDispatch } from "../../hooks";
 import { addReportData } from "../../features/reports/reportsSlice";
 import { ReportsItemProps, SingleReportsItem } from "../../types/types";
+import { useCallback } from "react";
 
 const ReportsData = (props: ReportsItemProps) => {
     const dispatch = useAppDispatch();
 
     const dataItems = props.data.map((data:SingleReportsItem) => <DataItem key={data.id} src={data.src} />)
 
-    const onAddNewData = ():void => {
+    const onAddNewData = useCallback(() => {
         const newDataItem = {id: uuid(), src: "pic1"}
 
         dispatch({
@@ -22,7 +23,7 @@ const ReportsData = (props: ReportsItemProps) => {
                 report: newDataItem
             }
         })
-    }
+    }, [dispatch, props.clientId, props.reportId])
 
     return (
         <div className={styles.reportData}>

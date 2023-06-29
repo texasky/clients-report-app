@@ -41,7 +41,8 @@ export interface ReportsListProps {
 
 export interface SingleReportsItem {
     id: string,
-    src: string
+    src: string,
+    reportId?: string
 }
 
 export interface ReportsItemProps {

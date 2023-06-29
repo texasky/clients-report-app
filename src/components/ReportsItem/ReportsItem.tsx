@@ -1,5 +1,5 @@
 import ClientsHeader from "../ClientsHeader/ClientsHeader";
-import {useState} from "react";
+import { useCallback, useState } from "react";
 import ReportsData from "../ReportsData/ReportsData";
 import { useAppDispatch } from "../../hooks";
 import { deleteReport } from "../../features/reports/reportsSlice";
@@ -10,9 +10,10 @@ const ReportsItem = (props: ReportsItemProps) => {
     const dispatch = useAppDispatch();
     const [openState, setOpenState] = useState(false);
 
-    const toggleOpenState = ():void => {
+
+    const toggleOpenState = useCallback(() => {
         setOpenState(openState => !openState);
-    }
+    }, [])
 
     const onDeleteReport = ():void => {
         dispatch({
